@@ -1,14 +1,17 @@
+import pytest
+from ..FizzBuzz import fizzbuzz
 # 1. Número divisible entre 3 y 5 la salida tiene que ser FizzBuzz
     def test_fizzbuzz_15(self):
         pass
 
     # 2. Número divisible entre 3 la salida tiene que ser Fizz
-    def test_fizz_9(self):
-        pass
+    def test_fizz_9():
+        assert fizzbuzz(9) == "Fizz"
 
     # 3. Número divisible entre 5 la salida tiene que ser Buzz
-    def test_buzz_10(self):
-        pass
+    def test_buzz_10():
+        assert fizzbuzz(10) == "Buzz"
+
 
     # 4. Número que no es múltiplo de 3 ni 5 la salida el propio número
     def test_normal_number(self):

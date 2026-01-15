@@ -1,25 +1,20 @@
-def fizzbuzz():
-    while True:
-        try:
-            n = int(input("Introduce un número entero entre 1 y 100: "))
+def fizzbuzz(n: int) -> str:
+    if n < 1 or n > 100:
+        raise ValueError("El número debe estar entre 1 y 100")
 
-            if n < 1 or n > 100:
-                print("Error: el número debe estar entre 1 y 100.")
-                continue
-
-            break 
-
-        except ValueError:
-            print("Error: debes introducir un número entero, no texto.")
-
-    
     if n % 15 == 0:
-        print("FizzBuzz")
+        return "FizzBuzz"
     elif n % 3 == 0:
-        print("Fizz")
+        return "Fizz"
     elif n % 5 == 0:
-        print("Buzz")
+        return "Buzz"
     else:
-        print(n)
+        return str(n)
 
-fizzbuzz()
+while True:
+    try:
+        n = int(input("Introduce un número entero entre 1 y 100: "))
+        print(fizzbuzz(n))
+        break
+    except ValueError as e:
+        print("Error:", e)
